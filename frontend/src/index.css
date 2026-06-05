@@ -879,15 +879,6 @@ button:disabled {
   .max-h-\[470px\] {
     max-height: 380px !important;
   }
-
-  /* Navbar specific: ensure dropdowns are centered or well-aligned on mobile */
-  header .absolute {
-    right: -1rem !important;
-    left: -1rem !important;
-    width: calc(100vw - 1.5rem) !important;
-    max-width: none !important;
-    margin: 0 auto;
-  }
 }
 
 /* Landscape orientation improvements */
@@ -936,35 +927,28 @@ button:disabled {
     width: 1.85rem !important;
   }
 
-  /* Dropdown specific handling in landscape */
-  header .absolute {
-    top: calc(100% + 0.25rem) !important;
-    right: 0.5rem !important;
-    left: 0.5rem !important;
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
-    max-height: 85vh !important;
-    overflow-y: auto !important;
-    scrollbar-width: none !important;
-  }
-
   /* Compact branding in cramped landscape */
   header button > div.sm\:block {
     display: none !important;
   }
 
-  /* Compact dropdown items */
-  header .absolute .rounded-2xl {
+  /* Compact dropdown items only in landscape */
+  header .absolute.z-\[9999\] {
+    top: calc(100% + 0.25rem) !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+  }
+
+  header .absolute.z-\[9999\] .rounded-2xl {
     border-radius: 0.75rem !important;
     padding: 0.5rem !important;
   }
 
-  header .absolute .text-lg {
+  header .absolute.z-\[9999\] .text-lg {
     font-size: 1rem !important;
   }
 
-  header .absolute .p-4 {
+  header .absolute.z-\[9999\] .p-4 {
     padding: 0.6rem !important;
   }
 
